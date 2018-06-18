@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>动态规划 | yhlben</title>
+    <meta name="description" content="欢迎来到我的空间">
+    
+    
+    <link rel="preload" href="/assets/css/26.styles.d31feb2f.css" as="style"><link rel="preload" href="/assets/js/app.ec4549d0.js" as="script"><link rel="preload" href="/assets/js/16.19553ebc.js" as="script"><link rel="prefetch" href="/assets/js/14.8f488d0c.js"><link rel="prefetch" href="/assets/js/1.de9903ad.js"><link rel="prefetch" href="/assets/js/2.8bee174a.js"><link rel="prefetch" href="/assets/js/3.41833bd9.js"><link rel="prefetch" href="/assets/js/4.a868cdec.js"><link rel="prefetch" href="/assets/js/5.257c8c62.js"><link rel="prefetch" href="/assets/js/6.5af20fc6.js"><link rel="prefetch" href="/assets/js/7.474f4de8.js"><link rel="prefetch" href="/assets/js/8.439d59eb.js"><link rel="prefetch" href="/assets/js/9.6d959f82.js"><link rel="prefetch" href="/assets/js/10.1a97e467.js"><link rel="prefetch" href="/assets/js/11.35b5fc9f.js"><link rel="prefetch" href="/assets/js/12.209e0427.js"><link rel="prefetch" href="/assets/js/13.fdf52b08.js"><link rel="prefetch" href="/assets/js/0.317e634d.js"><link rel="prefetch" href="/assets/js/15.5103debe.js"><link rel="prefetch" href="/assets/js/17.63bedadc.js"><link rel="prefetch" href="/assets/js/18.4c8fbb54.js"><link rel="prefetch" href="/assets/js/19.0d144fac.js"><link rel="prefetch" href="/assets/js/20.a6a4df7e.js"><link rel="prefetch" href="/assets/js/21.9c295ed1.js"><link rel="prefetch" href="/assets/js/22.0e47f444.js"><link rel="prefetch" href="/assets/js/23.98ae0d61.js"><link rel="prefetch" href="/assets/js/24.5cf6c1ab.js"><link rel="prefetch" href="/assets/js/25.2fc16e15.js">
+    <link rel="stylesheet" href="/assets/css/26.styles.d31feb2f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      yhlben
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/about.html" class="nav-link">关于</a></div><a href="https://github.com/yhlben/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/about.html" class="nav-link">关于</a></div><a href="https://github.com/yhlben/blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>博客</span><!----></p><ul class="sidebar-group-items"><li><a href="/blog/node.html" class="sidebar-link">node小知识</a></li><li><a href="/blog/base-select.html" class="sidebar-link">检索算法定义</a></li><li><a href="/blog/base-sort.html" class="sidebar-link">基本排序算法</a></li><li><a href="/blog/docker-demo.html" class="sidebar-link">docker 微服务小demo</a></li><li><a href="/blog/functional.html" class="sidebar-link">函数式编程</a></li><li><a href="/blog/design-pattern.html" class="sidebar-link">设计模式</a></li><li><a href="/blog/graph-http.html" class="sidebar-link">图解http</a></li><li><a href="/blog/high-algorithm.html" class="active sidebar-link">动态规划</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/high-algorithm.html#动态规划" class="sidebar-link">动态规划</a></li><li class="sidebar-sub-header"><a href="/blog/high-algorithm.html#贪心算法" class="sidebar-link">贪心算法</a></li></ul></li><li><a href="/blog/http.html" class="sidebar-link">输入一个网址后发生了什么？</a></li><li><a href="/blog/interview.html" class="sidebar-link">面试题</a></li><li><a href="/blog/js_inherit.html" class="sidebar-link">ES5 继承</a></li><li><a href="/blog/js-form.html" class="sidebar-link">表单的基础知识</a></li><li><a href="/blog/linux.html" class="sidebar-link">linux快捷键</a></li><li><a href="/blog/nginx-conf.html" class="sidebar-link">最简单的nginx负载均衡</a></li><li><a href="/blog/observer.html" class="sidebar-link">手写观察者模式</a></li><li><a href="/blog/performance.html" class="sidebar-link">前端性能优化</a></li><li><a href="/blog/redux.html" class="sidebar-link">redux使用总结</a></li><li><a href="/blog/rxjs.html" class="sidebar-link">Rx基础</a></li><li><a href="/blog/senior-sort.html" class="sidebar-link">高级排序算法</a></li><li><a href="/blog/structure.html" class="sidebar-link">数据结构分类</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>生活</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h2 id="动态规划"><a href="#动态规划" aria-hidden="true" class="header-anchor">#</a> 动态规划</h2><p>动态规划呗认为是一种与递归相反的技术。递归从顶部开始分解出多个小问题，合并成一个解决方案。动态规划从底部分解很多小问题解决掉，组成解决方案。</p><div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">//斐波那契数列</span>
+<span class="token keyword">function</span> <span class="token function">recurFib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">recurFib</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">recurFib</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'斐波那契数列'</span><span class="token punctuation">,</span><span class="token function">recurFib</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//动态规划</span>
+<span class="token keyword">function</span> <span class="token function">dynFib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> val<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        val<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token operator">||</span>n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        val<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span>
+        val<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+        val<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            val<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>val<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>val<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> val<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//console.log('动态规划',dynFib(10));</span>
+
+<span class="token comment">//动态规划，不用数组</span>
+<span class="token keyword">function</span> <span class="token function">iterFib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">var</span> last<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> nestLast<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> result<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            result<span class="token operator">=</span>last<span class="token operator">+</span>nestLast<span class="token punctuation">;</span>
+            nestLast<span class="token operator">=</span>last<span class="token punctuation">;</span>
+            last<span class="token operator">=</span>result<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'动态规划不用数组'</span><span class="token punctuation">,</span><span class="token function">iterFib</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="贪心算法"><a href="#贪心算法" aria-hidden="true" class="header-anchor">#</a> 贪心算法</h2><p>他是一种寻找“优质解”为手段达成整体解决方案的算法。这些优质的解决方案称为局部最优解。将有希望得到正确答案的最终解决方案称为全局最优解，“贪心”会用那些看起来近乎无法找到完整解决方案的问题，次优解也是可以接受的。</p><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//贪心算法</span>
+<span class="token keyword">function</span> <span class="token function">makeChange</span><span class="token punctuation">(</span>orginRmb<span class="token punctuation">,</span>coins<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> remainRmb<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">50</span><span class="token operator">&lt;</span>originRmb<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        coins<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">parseInt</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        remainRmb<span class="token operator">=</span>originRmb<span class="token operator">%</span><span class="token number">50</span><span class="token punctuation">;</span>
+        originRmb<span class="token operator">=</span>remainRmb<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">10</span><span class="token operator">&lt;</span>originRmb<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        coins<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">parseInt</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        remainRmb<span class="token operator">=</span>originRmb<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">;</span>
+        originRmb<span class="token operator">=</span>remainRmb<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">5</span><span class="token operator">&lt;</span>originRmb<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        coins<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">parseInt</span><span class="token punctuation">(</span>originRmb<span class="token operator">%</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        remainRmb<span class="token operator">=</span>originRmb<span class="token operator">%</span><span class="token number">5</span><span class="token punctuation">;</span>
+        originRmb<span class="token operator">=</span>remainRmb<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    coins<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span>originRmb<span class="token operator">%</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> originRmb<span class="token operator">=</span><span class="token number">63</span>
+<span class="token keyword">var</span> coins<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">makeChange</span><span class="token punctuation">(</span>originRmb<span class="token punctuation">,</span>coins<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>coins<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div><div class="page-edit"><!----><div class="last-updated"><span class="prefix">Last Updated: </span><span class="time">6/15/2018, 6:43:58 PM</span></div></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/blog/graph-http.html" class="prev">
+          图解http
+        </a></span><span class="next"><a href="/blog/http.html">
+          输入一个网址后发生了什么？
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/16.19553ebc.js" defer></script><script src="/assets/js/app.ec4549d0.js" defer></script>
+  </body>
+</html>
